@@ -9,13 +9,15 @@ To win is simple, align 4 of your checkers in a row horizontally, vertically, or
 Wire Frames
 Game Options
 
-imageGame Setup
+![image](https://media.git.generalassemb.ly/user/49417/files/c3c73d88-e6e6-49b1-9e5d-c635e9d75120)
 
-Screenshot 2023-08-03 at 5 44 36 PM
+Game Setup
+
+![Screenshot 2023-08-03 at 5 44 36 PM](https://media.git.generalassemb.ly/user/49417/files/3d7baf89-17be-4848-9b77-60589e33e7e5)
 
 Winner!
 
-image
+![image](https://media.git.generalassemb.ly/user/49417/files/50f50f9a-bd47-428b-bbb0-e75b1a5aeabd)
 
 User Stories:
 MVP Goals
