@@ -20,7 +20,9 @@ Winner!
 ![image](https://media.git.generalassemb.ly/user/49417/files/50f50f9a-bd47-428b-bbb0-e75b1a5aeabd)
 
 User Stories:
+
 MVP Goals
+
 In game options, user chooses game settings: choose opponent, choose color of checker then "Start Game."
 
 When user, clicks on the "Start Game" options it randomize who starts but also takes them to the game setup window.
@@ -34,6 +36,7 @@ The checker eventually lands then Player 2 or Computer goes next.
 This continues until either opponent aligns four checkers in a row either horizontally, vertically, or diagonally.
 
 Stretch Goals
+
 Ability for users to click and drag checker pieces above vertical board then release to watch the checker fall down to chosen location.
 
 Established checker's meter that reflect each time a checker is used and how many are remaining.
