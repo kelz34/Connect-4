@@ -2,15 +2,14 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-    background-color: #416cea;
+    background-color: beige;
 }
 
-h1 {
+/* h1 {
     text-align: center;
-} 
+}  */
 
 .wrapper {
-    
     width: 63.75;
     background-color: beige;
     position: absolute;
@@ -53,5 +52,19 @@ h1 {
     height: 3.12em;
     border-radius: 50%;
     background: radial-gradient(#ff4747 1.12em, #c00303 1.25em);
+}
+
+.grid-row {
+    margin: 0 auto;
+    display: flex;
+}
+
+.grid-box{
+    width: 5em;
+    height: 5em;
+    display: grid;
+    place-items: center;
+    background-color: radial-gradient(white 1.37em, #416cea 1.43em);
+    cursor: pointer;
 }
 
