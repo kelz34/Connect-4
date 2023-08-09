@@ -2,12 +2,12 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-    background-color: beige;
+    background-color: #416cea;
 }
 
-/* h1 {
+h1 {
     text-align: center;
-} */
+} 
 
 .wrapper {
     
