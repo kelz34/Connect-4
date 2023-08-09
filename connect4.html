@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🟡 Connect 4 🔴</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="connect4.css">
 </head>
 <body>
     <div class="wrapper">
+        <!-- <h1>Connect 4</h1> -->
         <div id="playerTurn">Demo Text</div>
-        <div class="container"></div>
+        <div class="board"></div>
         <div id="player-indicators">
             <div class="player-wrappers">
                 Player 1
@@ -21,6 +22,10 @@
             </div>
         </div>    
     </div>
-    <script type="text/javascript" src="app.js"></script>
+    <div class="startScreen hide">
+        <div id="winner-message"></div>
+        <button id="start-Game">Start Game</button>
+    </div>
+    <script type="text/javascript" src="connect4.css"></script>
 </body>
 </html>

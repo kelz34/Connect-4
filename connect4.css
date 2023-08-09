@@ -2,12 +2,17 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-    background-color: white;
+    background-color: beige;
 }
 
+/* h1 {
+    text-align: center;
+} */
+
 .wrapper {
+    
     width: 63.75;
-    background-color: #ffffff;
+    background-color: beige;
     position: absolute;
     padding: 2em;
     transform: translateX(-50%);
@@ -17,7 +22,7 @@ body {
     border: solid;
 }
 
-.container {
+.board {
     margin: 1.25em auto;
     width: 33.75em;
     border-radius: 0.6em;
