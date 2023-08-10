@@ -7,7 +7,6 @@ const startScreen = document.querySelector(".startScreen");
 const startButton = document.getElementById("start-game");
 const winnerMessage = document.getElementById("winner-message");
 // console.log(board, playerTurn, startScreen, startButton, winnerMessage);
-
 // Setup game object, not working turned into array
 let gameBoard = [
     [0,0,0,0,0,0,0],
@@ -22,57 +21,15 @@ let gameOver = false;
 let currentPlayer;
 
 // Randomize player turn
-const generateRandomNumber = (min, max) =>
+const alternateTurns = (min, max) =>
     Math.floor (Math.random() * (max-min)) + min;
 
 
 
 // Access each row
-// for(let horiCheck in gameBoard) {
-//     for (let j in gameBoard[horiCheck]){
-//         // let horiConnect = gameBoard[horiCheck];
-//         // const rowAccess = document.getAtt(grid-row);
-//         // rowAccess.addEventListener("click");
-//         // console.log(rowAccess)
-//     };
-// };
-const getGridElementsPosition = (index) => {
-    const gridEl = document.getElementsByClassName("board");
-// console.log(gridEl)
-let offset = Number(window.getComputedStyle(gridEl.children[0]).gridColumnStart) - 1;
-// console.log(offset)
-if (isNaN(offset)){
-    offset = 0;
-}
-const colCount = window.getComputedStyle(gridEl).gridTemplateColumns.split(" ").length;
 
-const rowPosition = Math.floor((index + offset) / colCount);
-const colPosition = (index + offset) % colCount;
 
-return { row: rowPosition, column: colPosition };
-}
 
-const getNodeIndex = (elm) => {
-    let c = elm.parentNode.children,
-    i = 0;
-    for (; i < c.length; i++) if (c[i] == elm) return i;
-}
-
-const addClickEventsToGridItems = () => {
-    let gridItems = document.getElementsByClassName("grid-box");
-    for (let i = 0; i < gridItems.length; i++){
-        gridItems[i].onclick = (e) => {
-            let position = getGridElementsPosition(getNodeIndex(e.target));
-            console.log(`Node position is row ${position.row}, column ${position.column}`);
-        }
-    }
-}
-addClickEventsToGridItems();
-
-// Checks for horizontal values
-const checkHori = () => {
-
-}
 // checkHori();
 
 // Checks for vertical values
@@ -91,22 +48,43 @@ const gameStatus = () => {
 
 }
 
+// Placing checker at the exact point by accessing all the rows the findings using querySelector. Then create an if statement that that has decrement if the value is not equal to zero. Else, to add a currentPlayer where that row was selected. 
+const placePiece = (startCount, columnVal) => {
+    let rows = document.querySelectorAll("grid-rows");
+    if (gameBoard[startCount][columnVal] != 0){
+        startCount -= 1;
+        placePiece(startCount, columnVal);
+    } else {
+        let currentRow = rows[startCount].querySelectorAll(".grid-box");
+        currentRow[columnVal].classList.add("filled", `player${currentPlayer}`);
+        if (winCheck(startCount, columnVal)) {
+            message.innerHTML = `Player<span> ${currentPlayer}</span> wins`;
+            startScreen.classList.remove("hide");
+            return false;
+        }
+    }
+};
+// console.log(placePiece)
+
 // Checks if boxes are full after click
 const boxFilled = (event) => {
-    
-}
+    let columnVal = parse(event.target.getAttribue("data-value"));
+    placePiece(5, columnVal);
+    currentPlayer = currentPlayer == 1 ? 2 : 1;
+    playerTurn.innerHTML = `Player <span>${currentPlayer}'s turn`;
+};
+// console.log(currentPlayer)
 
 
-
-// Create skeleton of game structure
+// Make a function that would create the game board. Contains two loops 1) creates the arrays in the form of rows(6rows) 2) creates each element for each row (7 elements in each row). Finally append to ensure it is added to DOM
 const gameBoardSetup = () => {
-    for(let innerArray in gameBoard){
+    for(let insideArr in gameBoard){
         let outerDiv = document.createElement("div");
         outerDiv.classList.add("grid-row");
-        outerDiv.setAttribute("data-value", innerArray);
+        outerDiv.setAttribute("data-value", insideArr);
         // console.log(gameBoard[innerArray])
-        for(let j in gameBoard[innerArray]){
-            gameBoard[innerArray][j] = 0;
+        for(let j in gameBoard[insideArr]){
+            gameBoard[insideArr][j] = 0;
             // console.log(gameBoard[innerArray][j])
             let innerDiv = document.createElement("div");
             innerDiv.classList.add("grid-box");
@@ -121,11 +99,9 @@ const gameBoardSetup = () => {
 };
 // console.log(gameBoardSetup())
 
-
-
-// Adding window.onload to load game after DOM content is loaded 
+// Add window.onload using "async" and "await", so that my start menu would appear before the board does. Also, my message to appear who's turn is it currently.
 window.onload = startGame = async () => {
-    currentPlayer = generateRandomNumber(1,3);
+    currentPlayer = alternateTurns(1,3);
     board.innerHTML = "";
     await gameBoardSetup();
     playerTurn.innerHTML = `Player <span>${currentPlayer}'s</span> turn`

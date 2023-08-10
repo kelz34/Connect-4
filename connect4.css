@@ -13,7 +13,7 @@ h1 {
     width: 63.75;
     background-color: beige;
     position: absolute;
-    padding: 0.5em 200px;
+    padding: 0.5em 130px;
     transform: translateX(-50%);
     left: 50%;
     top: 1em;
@@ -35,7 +35,9 @@ h1 {
     width: 100%;
     grid-template-columns: 1fr 1fr;
     justify-content: space-between;
-    
+    width: 50em;
+    bottom: 50px;
+    overflow: hidden;
 }
 
 .player1:before {
@@ -66,7 +68,7 @@ h1 {
     font-weight: 600;
 }
 
-/* .startScreen {
+.startScreen {
     position: absolute;
     top: 0;
     height: 100vh;
@@ -76,9 +78,9 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-} */
+}
 
-/* .startScreen button {
+.startScreen button {
     background-color: #ffffff;
     font-size: 1.4em;
     padding: 1em 2em;
@@ -86,7 +88,7 @@ h1 {
     outline: none;
     border-radius: 2em;
     cursor: pointer;
-} */
+}
 
 .grid-row {
     margin: 0 auto;
@@ -105,3 +107,10 @@ h1 {
     display: none;
 }
 
+/* #start-button-wrapper{
+
+}
+
+#start-screen-header{
+
+} */
