@@ -5,20 +5,20 @@ body {
     background-color: beige;
 }
 
-/* h1 {
+h1 {
     text-align: center;
-}  */
+} 
 
 .wrapper {
     width: 63.75;
     background-color: beige;
     position: absolute;
-    padding: 2em;
+    padding: 0.5em 200px;
     transform: translateX(-50%);
     left: 50%;
-    top: 1.25em;
+    top: 1em;
     border-radius: 0;
-    border: solid;
+    border: 5px solid;
 }
 
 .board {
@@ -27,12 +27,15 @@ body {
     border-radius: 0.6em;
     overflow: hidden;
     background-color: #416cea;
+    border: 5px solid navy;
 }
 
 #player-indicators {
-    display: grid;
+    display: flex;
     width: 100%;
     grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    
 }
 
 .player1:before {
@@ -54,6 +57,37 @@ body {
     background: radial-gradient(#ff4747 1.12em, #c00303 1.25em);
 }
 
+#playerTurn{
+    margin: 1em 0;
+    text-align: left;
+}
+
+#playerTurn span {
+    font-weight: 600;
+}
+
+/* .startScreen {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: beige;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} */
+
+/* .startScreen button {
+    background-color: #ffffff;
+    font-size: 1.4em;
+    padding: 1em 2em;
+    border: none;
+    outline: none;
+    border-radius: 2em;
+    cursor: pointer;
+} */
+
 .grid-row {
     margin: 0 auto;
     display: flex;
@@ -64,7 +98,10 @@ body {
     height: 5em;
     display: grid;
     place-items: center;
-    background-color: radial-gradient(white 1.37em, #416cea 1.43em);
+    background: radial-gradient(white 1.37em, #416cea 1.43em);
     cursor: pointer;
+}
+.hide {
+    display: none;
 }
 
