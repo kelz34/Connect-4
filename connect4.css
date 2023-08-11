@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-    background-color: beige;
+    background-color: #c3528c;
 }
 
 h1 {
@@ -10,10 +10,10 @@ h1 {
 } 
 
 .wrapper {
-    width: 63.75;
-    background-color: beige;
+    width: 33.75;
+    background-color: white;
     position: absolute;
-    padding: 0.5em 130px;
+    padding: 0.5em;
     transform: translateX(-50%);
     left: 50%;
     top: 1em;
@@ -26,7 +26,7 @@ h1 {
     width: 33.75em;
     border-radius: 0.6em;
     overflow: hidden;
-    background-color: #416cea;
+    background-image: #416cea;
     border: 5px solid navy;
 }
 
@@ -34,10 +34,9 @@ h1 {
     display: flex;
     width: 100%;
     grid-template-columns: 1fr 1fr;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 50em;
     bottom: 50px;
-    overflow: hidden;
 }
 
 .player1:before {
@@ -61,7 +60,9 @@ h1 {
 
 #playerTurn{
     margin: 1em 0;
-    text-align: left;
+    text-align: center;
+    font-size: xx-large;
+    color: #c3528c;
 }
 
 #playerTurn span {
@@ -73,7 +74,7 @@ h1 {
     top: 0;
     height: 100vh;
     width: 100vw;
-    background-color: beige;
+    background-color:  #86e0d3;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -106,11 +107,8 @@ h1 {
 .hide {
     display: none;
 }
-
-/* #start-button-wrapper{
-
+#winner-message {
+    margin-bottom: 1em;
+    color: white;
+    font-size: 3.6em;
 }
-
-#start-screen-header{
-
-} */
