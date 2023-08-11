@@ -43,14 +43,21 @@ const checkDiag = () => {
 }
 
 
-// Game over
-const gameStatus = () => {
+// Game status functions checks horizontal, vertical and diagonal values using a boolean expression matching the position with true if it is actually that position
+const gameStatus = (row, column) => {
+    return checkAdjacentRowValues(row)
+    ? true
+    : checkAdjacentRoColumnValues(column)
+    ? true
+    : checkAdjacentDiagonalValues(row, column)
+    ? true
+    : false;
+};
 
-}
 
 // Placing checker at the exact point by accessing all the rows the findings using querySelector. Then create an if statement that that has decrement if the value is not equal to zero. Else, to add a currentPlayer where that row was selected. 
 const placePiece = (startCount, columnVal) => {
-    let rows = document.querySelectorAll("grid-rows");
+    let rows = document.querySelectorAll(".grid-row");
     if (gameBoard[startCount][columnVal] != 0){
         startCount -= 1;
         placePiece(startCount, columnVal);
@@ -63,12 +70,13 @@ const placePiece = (startCount, columnVal) => {
             return false;
         }
     }
+    gameOver();
 };
 // console.log(placePiece)
 
 // Checks if boxes are full after click
-const boxFilled = (event) => {
-    let columnVal = parse(event.target.getAttribue("data-value"));
+const boxFilled = (e) => {
+    let columnVal = parseInt(e.target.getAttribute("data-value"));
     placePiece(5, columnVal);
     currentPlayer = currentPlayer == 1 ? 2 : 1;
     playerTurn.innerHTML = `Player <span>${currentPlayer}'s turn`;
